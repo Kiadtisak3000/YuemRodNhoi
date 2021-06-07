@@ -1,18 +1,19 @@
 # YumRotNhoi
 ขี้เกียจทำอ่ะ
 
-Frontend
+How to Run!!
 
-ติดตั้ง Bootstrap CSS Framework
-- npm install bootstrap jquery popper.js
+  Database
+  - สร้าง Database ชื่อ rentalcars
+  - สร้าง collection 
+      ชื่อ users
+  
+  Backend
+  - สั่ง run --> nodemon .\rentalcars.js
 
-ติดตั้ง angular web storage
-- npm install angular-web-storage --save
+  Frontend
+  - ติดตั้ง node modules
+    run --> npm install 
 
-Backend
 
-สร้าง Database ชื่อ rentalcars
 
-สร้าง collection 
-  ชื่อ
-   -  users
