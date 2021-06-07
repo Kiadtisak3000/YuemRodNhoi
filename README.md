@@ -5,4 +5,4 @@
 - npm install bootstrap jquery popper.js
 
 ติดตั้ง angular web storage
-- npm angular-web-storage --save
+- npm install angular-web-storage --save
