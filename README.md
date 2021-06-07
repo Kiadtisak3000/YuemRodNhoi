@@ -14,6 +14,7 @@ How to Run!!
   Frontend
   - ติดตั้ง node modules
     run --> npm install 
+    run --> ng serve
 
 
 
