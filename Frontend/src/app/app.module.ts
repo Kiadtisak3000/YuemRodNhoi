@@ -10,9 +10,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularWebStorageModule } from 'angular-web-storage';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
-  declarations: [AppComponent, SigninComponent, HomepageComponent, SignupComponent],
+  declarations: [AppComponent, SigninComponent, HomepageComponent, SignupComponent, NavbarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
