@@ -11,9 +11,15 @@ import { AngularWebStorageModule } from 'angular-web-storage';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { UsersComponent } from './components/users/users.component';
+import { BikeComponent } from './components/bike/bike.component';
+import { CarComponent } from './components/car/car.component';
+import { VanComponent } from './components/van/van.component';
+import { PendingComponent } from './components/pending/pending.component';
+import { ReservationComponent } from './components/reservation/reservation.component';
 
 @NgModule({
-  declarations: [AppComponent, SigninComponent, HomepageComponent, SignupComponent, NavbarComponent],
+  declarations: [AppComponent, SigninComponent, HomepageComponent, SignupComponent, NavbarComponent, UsersComponent, BikeComponent, CarComponent, VanComponent, PendingComponent, ReservationComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
