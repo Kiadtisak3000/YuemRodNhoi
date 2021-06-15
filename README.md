@@ -1,19 +1,19 @@
 # YumRotNhoi
 ขี้เกียจทำอ่ะ
 
-How to Run!!
+## How to Run!!
 
-  Database
+###  Database
   - สร้าง Database ชื่อ rentalcars
   - สร้าง collection 
       * ชื่อ users 
       * ชื่อ cars
       * ชื่อ reservation
   
-  Backend
+###  Backend
   - สั่ง run --> nodemon .\rentalcars.js
 
-  Frontend
+###  Frontend
   - ติดตั้ง node modules
     run --> npm install 
     run --> ng serve
