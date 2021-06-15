@@ -7,6 +7,8 @@ How to Run!!
   - สร้าง Database ชื่อ rentalcars
   - สร้าง collection 
       ชื่อ users
+      ชื่อ cars
+      ชื่อ reservation
   
   Backend
   - สั่ง run --> nodemon .\rentalcars.js
