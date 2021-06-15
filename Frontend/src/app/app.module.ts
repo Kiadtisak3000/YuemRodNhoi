@@ -17,9 +17,10 @@ import { CarComponent } from './components/car/car.component';
 import { VanComponent } from './components/van/van.component';
 import { PendingComponent } from './components/pending/pending.component';
 import { ReservationComponent } from './components/reservation/reservation.component';
+import { AddcarsComponent } from './components/addcars/addcars.component';
 
 @NgModule({
-  declarations: [AppComponent, SigninComponent, HomepageComponent, SignupComponent, NavbarComponent, UsersComponent, BikeComponent, CarComponent, VanComponent, PendingComponent, ReservationComponent],
+  declarations: [AppComponent, SigninComponent, HomepageComponent, SignupComponent, NavbarComponent, UsersComponent, BikeComponent, CarComponent, VanComponent, PendingComponent, ReservationComponent, AddcarsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

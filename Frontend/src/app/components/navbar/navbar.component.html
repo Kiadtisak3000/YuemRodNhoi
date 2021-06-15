@@ -1,24 +1,48 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a routerLink="homepage" class="navbar-brand btn btn-dark"><i class="fa fa-home"></i> ระบบยืมยานพาหนะ</a>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item">
-          <a routerLink="first" routerLinkActive="active" class="btn btn-dark"><i class="fa fa-motorcycle"></i> รถจักรยานยนต์</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="second" routerLinkActive="active" class="btn btn-dark"><i class="fa fa-car"></i> รถยนต์</a>
-        </li>
-        <li class="nav-item">
-            <a routerLink="third" routerLinkActive="active" class="btn btn-dark"><i class="fa fa-shuttle-van"></i> รถตู้</a>
-        </li>
-      </ul>
-    </div>
-    <a routerLink="signin" class="btn btn-dark">
-        เข้าสู่ระบบ 
-    </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+    aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a routerLink="homepage" class="navbar-brand btn btn-dark"><i class="fa fa-home"></i> 
+    ระบบยืมยานพาหนะ
+  </a>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a routerLink="bike" routerLinkActive="active" class="btn btn-dark">
+          รถจักรยานยนต์
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="car" routerLinkActive="active" class="btn btn-dark"> 
+          รถยนต์
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="van" routerLinkActive="active" class="btn btn-dark"> 
+          รถตู้
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="reservation" routerLinkActive="active" class="btn btn-dark">
+          ยืมยานพาหะ
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="pending" routerLinkActive="active" class="btn btn-dark">
+          สถานะการยืม
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="addcars" routerLinkActive="active" class="btn btn-dark">
+         เพิ่มข้อมูลยานพานะ
+        </a>
+      </li>
+    </ul>
+  </div>
+  <a routerLink="signin" class="btn btn-dark">
+    เข้าสู่ระบบ
+  </a>
 </nav>

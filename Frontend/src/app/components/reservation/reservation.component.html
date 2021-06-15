@@ -1,1 +1,114 @@
-<p>reservation works!</p>
+<div class="card-body">
+    <h4 class="card-title">ขอยืมยานพาหนะ</h4>
+    <div class="row">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-8">
+            <form [formGroup]="reservationForm">
+                <div class="card">
+                    <div class="card-header">
+                        กรอกแบบฟอร์มการขอยืมยานพาหนะ
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                ยานพานะ:
+                            </div>
+                            <div class="col-md-9">
+                                <div class="form-group">
+                                    <select class="form-control" formControlName="car">
+                                        <option value=""></option>
+                                        <option *ngFor="let item of carName" [value]="item.name">{{item.name}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div><br>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                เหตุผลการยืม:
+                            </div>
+                            <div class="col-md-9">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" formControlName="detail" />
+                                </div>
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-md-3">
+                                ชื่อผู้ยืม:
+                            </div>
+                            <div class="col-md-9">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" formControlName="name" />
+                                </div>
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-md-3">
+                                เบอร์โทร:
+                            </div>
+                            <div class="col-md-9">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" formControlName="tel" />
+                                </div>
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-md-3">
+                                เริ่มยืม:
+                            </div>
+                            <div class="col-md-9">
+                                <div class="form-group">
+                                    <input type="date" class="form-control" formControlName="start" />
+                                </div>
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-md-3">
+                                สิ้นสุด:
+                            </div>
+                            <div class="col-md-9">
+                                <div class="form-group">
+                                    <input type="date" class="form-control" formControlName="end" />
+                                </div>
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-md-3">
+                                ส่วนเสริม:
+                            </div>
+                            <div class="col-md-9">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" formControlName="option" />
+                                </div>
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-md-3">
+                                อื่นๆ:
+                            </div>
+                            <div class="col-md-9">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" formControlName="other" />
+                                </div>
+                            </div>
+                        </div><br>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="button" class="btn btn-primary" (click)="addReservation()">Save</button>&nbsp;
+                                <button type="reset" class="btn btn-danger" (click)="resetForm()">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-8">
+
+        </div>
+    </div>
+</div>

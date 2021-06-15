@@ -9,6 +9,49 @@ const config = {
   useUnifiedTopology: true,
 };
 
+var Schema = require("mongoose").Schema;
+
+//Cars Schema
+const carsSchema = Schema({
+  type: String,
+  name: String,
+  licensePlate: String,
+  detail: String,
+  quantity: Number,
+  file: String,
+  img: String
+}, {
+  collection: 'cars'
+});
+
+let Car
+try {
+  Car = mongoose.model('cars')
+} catch (error) {
+  Car = mongoose.model('cars', carsSchema);
+}
+
+//Reservations Schema
+const reservationsSchema = Schema({
+  car: String,
+  detail: String,
+  name: String,
+  tel: String,
+  start: String,
+  end: String,
+  option: String,
+  other: String,
+}, {
+  collection: 'reservations'
+});
+
+let Reservation
+try {
+  Reservation = mongoose.model('reservations')
+} catch (error) {
+  Reservation = mongoose.model('reservations', reservationsSchema);
+}
+
 expressApp.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "http://localhost:4200");
   res.setHeader(
@@ -24,6 +67,7 @@ expressApp.use((req, res, next) => {
 });
 expressApp.use(expressFunction.json());
 
+
 expressApp.use((req, res, next) => {
   mongoose
     .connect(url, config)
@@ -37,9 +81,120 @@ expressApp.use((req, res, next) => {
     });
 });
 
+//Car
+const addCar = (carData) => {
+  return new Promise((resolve, reject) => {
+    var new_car = new Car(
+      carData
+    );
+    new_car.save((err, data) => {
+      if (err) {
+        reject(new Error('Cannot insert Car to DB!'));
+      } else {
+        resolve({ message: 'Car added successfully' });
+      }
+    });
+  });
+}
+
+const getCars = () => {
+  return new Promise((resolve, reject) => {
+    Car.find({}, (err, data) => {
+      if (err) {
+        reject(new Error('Cannot get cars!'));
+      } else {
+        if (data) {
+          resolve(data)
+        } else {
+          reject(new Error('Cannot get cars!'));
+        }
+      }
+    })
+  });
+}
+
+expressApp.post('/cars/addcars', (req, res) => {
+  console.log('add');
+  addCar(req.body)
+    .then(result => {
+      console.log(result);
+      res.status(200).json(result);
+    })
+    .catch(err => {
+      console.log(err);
+    })
+});
+
+expressApp.get('/cars/get', (req, res) => {
+  console.log('get');
+  getCars()
+    .then(result => {
+      console.log(result);
+      res.status(200).json(result);
+    })
+    .catch(err => {
+      console.log(err);
+    })
+});
+
+//Reservations
+const addReservation = (reservationData) => {
+  return new Promise((resolve, reject) => {
+    var new_reservation = new Reservation(
+      reservationData
+    );
+    new_reservation.save((err, data) => {
+      if (err) {
+        reject(new Error('Cannot insert Reservation to DB!'));
+      } else {
+        resolve({ message: 'Reservation added successfully' });
+      }
+    });
+  });
+}
+
+const getReservations = () => {
+  return new Promise((resolve, reject) => {
+    Reservation.find({}, (err, data) => {
+      if (err) {
+        reject(new Error('Cannot get reservation!'));
+      } else {
+        if (data) {
+          resolve(data)
+        } else {
+          reject(new Error('Cannot get reservation!'));
+        }
+      }
+    })
+  });
+}
+
+expressApp.post('/reservations/addreservations', (req, res) => {
+  console.log('add');
+  addReservation(req.body)
+    .then(result => {
+      console.log(result);
+      res.status(200).json(result);
+    })
+    .catch(err => {
+      console.log(err);
+    })
+});
+
+expressApp.get('/reservations/get', (req, res) => {
+  console.log('get');
+  getReservations()
+    .then(result => {
+      console.log(result);
+      res.status(200).json(result);
+    })
+    .catch(err => {
+      console.log(err);
+    })
+});
+
 expressApp.use("/user", require("./routes/user"));
 expressApp.use("/login", require("./routes/signin"));
-/* expressApp.use("/api", require("./api/products")); */
 
 expressApp.listen(3000, function () {
   console.log("Listening on port 3000");
