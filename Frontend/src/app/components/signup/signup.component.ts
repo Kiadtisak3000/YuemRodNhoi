@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
@@ -10,12 +10,12 @@ import { AuthService } from '../../services/auth.service';
 })
 export class SignupComponent implements OnInit {
   authForm = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl(''),
-    email: new FormControl(''),
-    firstname: new FormControl(''),
-    lastname: new FormControl(''),
-    dateofbirth: new FormControl(''),
+    username: new FormControl('',[Validators.required]),
+    password: new FormControl('',[Validators.required]),
+    email: new FormControl('',[Validators.required,Validators.email]),
+    firstname: new FormControl('',[Validators.required]),
+    lastname: new FormControl('',[Validators.required]),
+    dateofbirth: new FormControl('',[Validators.required]),
   });
 
   constructor(private auth: AuthService, private router: Router) {}
@@ -59,5 +59,10 @@ export class SignupComponent implements OnInit {
         alert('username or password is incorrect');
         console.log(this.authForm.value); */
     });
+  }
+
+  get fromdata(){
+    console.log(this.authForm.controls);
+    return this.authForm.controls
   }
 }
