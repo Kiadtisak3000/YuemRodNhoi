@@ -51,17 +51,18 @@ export class EditcarsComponent implements OnInit {
   }
 
   updateCar(){
-   console.log("say "+this.carID + this.carForm.value.img) 
-   this.car.updateCar(this.carID,this.carForm)
+   console.log("say "+this.carID + this.carForm.value) 
+
+   this.car.updateCar(this.carID,this.carForm.value)
   }
 
   edit(carsID:any,carBody : any){
     this.show = !this.show;
 
     console.log("Form " + this.carForm)
-    console.log("carid  " + carsID );
+    console.log("carid1  " + carsID );
     this.carID = carsID
-    console.log("carid  " + carBody );
+    console.log("carid2  " + carBody );
   }
 
   delete(id:any){

@@ -118,6 +118,7 @@ const getCars = () => {
 }
 
 const deleteCar = async (id) =>{
+  console.log("delete id " + id)
   return new Promise((resolve, reject) => {
     console.log("delete")
     Car.deleteOne({_id: id}, (err, data) => {
@@ -131,15 +132,20 @@ const deleteCar = async (id) =>{
 }
 
 const updateCar = async (id, data) => {
+  console.log("999 " + id)
+  console.log("777 " + data)
   return new Promise((resolve, reject) => {
-    if (id === undefined) {
-      reject(new Error("Cannot update Car"));
-    }
+     if (id === undefined) {
+      reject(new Error("Cannot update Cars"));
+      console.log("000 " )
+    } 
     Car.updateOne({ _id: id }, { $set: data }, (err, data) => {
       if (err) {
         reject(new Error("Cannot update Car"));
+        console.log("111 " )
       } else {
         resolve({ message: "Car update successfully." });
+        console.log("222 " )
       }
     });
   });
@@ -184,17 +190,15 @@ expressApp.get('/cars/get', (req, res) => {
     })
 });
 
-expressApp.put('/cars/updatecar', (req, res ) =>{
-  console.log("this is ID1 "+req.body[2]);
-  console.log("this is ID2 "+req.body[0]);
-  console.log("This is Body " + req.body[1]);
-  updateCar(req.body[0], req.body[1])
+expressApp.put('/cars/updatecar/:id', (req, res ) =>{ 
+ 
+  updateCar(req.params.id, req.body)
   .then((result) => {
     res.status(200).json(result);
   })
   .catch((err) => {
     res.status(400).send(String(err));
-  }); 
+  });  
 })
 
 

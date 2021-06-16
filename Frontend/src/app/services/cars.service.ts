@@ -38,7 +38,7 @@ export class CarsService {
 
   updateCar(carID:any, carBody:any){
     console.log("read "+carID + " read 2 " +carBody)
-    console.log("read 111")
-    this.http.put<any>('http://localhost:3000/cars/updatecar', carID, carBody).subscribe(response => {});
+    const http='http://localhost:3000/cars/updatecar/'+carID;
+    this.http.put<any>(http, carBody,).subscribe(response => {});
   }
 }
