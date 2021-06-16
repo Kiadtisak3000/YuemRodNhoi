@@ -81,7 +81,11 @@ expressApp.use((req, res, next) => {
     });
 });
 
-//Car
+
+
+// Car
+//-------------------------------------------------------------------------
+
 const addCar = (carData) => {
   return new Promise((resolve, reject) => {
     var new_car = new Car(
@@ -113,6 +117,49 @@ const getCars = () => {
   });
 }
 
+const deleteCar = async (id) =>{
+  return new Promise((resolve, reject) => {
+    console.log("delete")
+    Car.deleteOne({_id: id}, (err, data) => {
+      if (err) {
+        reject(new Error(err + "Cannot Delete this Car"));
+      } else {
+        resolve({ message: "Car deleted successfully." });
+      }
+    });
+  });
+}
+
+const updateCar = async (id, data) => {
+  return new Promise((resolve, reject) => {
+    if (id === undefined) {
+      reject(new Error("Cannot update Car"));
+    }
+    Car.updateOne({ _id: id }, { $set: data }, (err, data) => {
+      if (err) {
+        reject(new Error("Cannot update Car"));
+      } else {
+        resolve({ message: "Car update successfully." });
+      }
+    });
+  });
+};
+
+
+expressApp.route('/cars/deletecars/:id').delete( (req,res) => {
+  console.log("delete")
+  console.log(req.params.id)
+  deleteCar(req.params.id)
+  .then((result)=>{
+    res.status(200).json(result)
+    .catch((err)=>{
+      res.status(404).send(String(err))
+    })
+  })
+ 
+  
+})
+
 expressApp.post('/cars/addcars', (req, res) => {
   console.log('add');
   addCar(req.body)
@@ -136,6 +183,23 @@ expressApp.get('/cars/get', (req, res) => {
       console.log(err);
     })
 });
+
+expressApp.put('/cars/updatecar', (req, res ) =>{
+  console.log("this is ID1 "+req.body[2]);
+  console.log("this is ID2 "+req.body[0]);
+  console.log("This is Body " + req.body[1]);
+  updateCar(req.body[0], req.body[1])
+  .then((result) => {
+    res.status(200).json(result);
+  })
+  .catch((err) => {
+    res.status(400).send(String(err));
+  }); 
+})
+
+
+
+//-------------------------------------------------------------------------
 
 //Reservations
 const addReservation = (reservationData) => {

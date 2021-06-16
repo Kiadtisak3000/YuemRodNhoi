@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot } from '@angular/router';
+import {  Router,CanActivate, ActivatedRouteSnapshot,CanActivateChild, RouterStateSnapshot } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { LocalStorageService } from 'angular-web-storage';
@@ -11,18 +11,18 @@ import { FormControl, FormGroup } from '@angular/forms';
 @Injectable({
   providedIn: 'root'
 })
-export class RouteGuardService {
+export class RouteGuardService implements CanActivate , CanActivateChild  {
 
   user:any;
 
-  constructor(private auth: AuthService,private authService: AuthService) {}
+  constructor(private router:Router,private authService: AuthService) {}
 
   getForm(user : any){
    this.user = user;
   }
 
-  public canActivate(route: ActivatedRouteSnapshot){
-    console.log("check" + this.user)
+  canActivate(route: ActivatedRouteSnapshot){
+    console.log("check 1" + this.user)
     if(this.user == "admin"){
       return true
     }else{
@@ -30,12 +30,8 @@ export class RouteGuardService {
     }    
   }
 
-  public canActivateChild(route: ActivatedRouteSnapshot){
-    console.log("check" + this.user)
-    if(this.user ){
-      return true
-    }else{
-      return false
-    }    
+  canActivateChild(route: ActivatedRouteSnapshot) {
+    console.log("check 1" )
+    return false;
   }
 }

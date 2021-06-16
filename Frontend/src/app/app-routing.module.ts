@@ -8,6 +8,7 @@ import { ReservationComponent } from './components/reservation/reservation.compo
 import { AddcarsComponent } from './components/addcars/addcars.component';
 import { RouterModule, Routes } from '@angular/router';
 import { RouteGuardService } from './services/route-guard.service';
+import { EditcarsComponent } from './components/editcars/editcars.component';
 
 const routes: Routes = [
   { 
@@ -15,6 +16,12 @@ const routes: Routes = [
     canActivateChild : [RouteGuardService],
     component: PendingComponent,
   },
+  { 
+    path: 'editcars', 
+    canActivateChild : [RouteGuardService],
+    component: EditcarsComponent,
+  },
+  
   {
     path: 'signin',
     component: SigninComponent,
@@ -26,15 +33,17 @@ const routes: Routes = [
   },
   {
     path: 'homepage',
+    canActivateChild : [RouteGuardService],
     component: HomepageComponent,
   },
   {
     path: 'signup',
+    
     component: SignupComponent,
   },
   {
-    path: 'car',
     canActivateChild : [RouteGuardService],
+    path: 'car',
     component: CarComponent,
   },
   {
@@ -42,7 +51,11 @@ const routes: Routes = [
     canActivate : [RouteGuardService],
     component: AddcarsComponent,
   },
-  { path: '', redirectTo: 'signin', pathMatch: 'full' },
+
+  
+
+  { path: '', redirectTo: 'signin', pathMatch: 'full' ,
+ },
 ];
 
 @NgModule({

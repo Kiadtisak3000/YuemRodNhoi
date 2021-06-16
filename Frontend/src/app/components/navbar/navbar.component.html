@@ -17,7 +17,7 @@
       </li>
       <li class="nav-item">
         <a routerLink="reservation" routerLinkActive="active" class="btn btn-dark">
-          ยืมยานพาหะ
+          ยืมยานพาหนพ
         </a>
       </li>
       <li class="nav-item">
@@ -27,16 +27,22 @@
       </li>
       <li class="nav-item">
         <a routerLink="addcars" routerLinkActive="active" class="btn btn-dark">
-          เพิ่มข้อมูลยานพานะ
+          เพิ่มข้อมูลยานพาหนะ
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="editcars" routerLinkActive="active" class="btn btn-dark">
+          แก้ไขข้อมูลยานพาหนะ
         </a>
       </li>
     </ul>
 
   </div>
   <a routerLink="signin" class="btn btn-dark">
-    <div>
-      
+    <div *ngIf="show">
+      <div>
+        ออกจากระบบ
+      </div>
     </div>
-    เข้าสู่ระบบ
   </a>
 </nav>

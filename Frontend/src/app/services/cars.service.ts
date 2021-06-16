@@ -7,7 +7,8 @@ import { map } from 'rxjs/operators';
 })
 export class CarsService {
   cars: any;
-
+  postId: any;
+  errorMessage: any;
   constructor(private http: HttpClient) { }
 
   addCar(car: any) {
@@ -27,4 +28,17 @@ export class CarsService {
         return this.cars;
       }));
     }
+
+  deleteCar(carID: any){
+      const http='http://localhost:3000/cars/deletecars/'+carID;
+      console.log(http)
+      this.http.delete<any>(http).subscribe((ok)=>{console.log(ok)});
+      window.location.reload(); 
+    }
+
+  updateCar(carID:any, carBody:any){
+    console.log("read "+carID + " read 2 " +carBody)
+    console.log("read 111")
+    this.http.put<any>('http://localhost:3000/cars/updatecar', carID, carBody).subscribe(response => {});
+  }
 }
