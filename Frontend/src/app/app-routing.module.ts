@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
@@ -7,16 +6,22 @@ import { CarComponent } from "./components/car/car.component"
 import { PendingComponent } from './components/pending/pending.component';
 import { ReservationComponent } from './components/reservation/reservation.component';
 import { AddcarsComponent } from './components/addcars/addcars.component';
-import { BikeComponent } from './components/bike/bike.component';
-import { VanComponent } from './components/van/van.component';
+import { RouterModule, Routes } from '@angular/router';
+import { RouteGuardService } from './services/route-guard.service';
 
 const routes: Routes = [
+  { 
+    path: 'pending', 
+    canActivateChild : [RouteGuardService],
+    component: PendingComponent,
+  },
   {
     path: 'signin',
     component: SigninComponent,
   },
   {
     path: 'reservation',
+    canActivateChild : [RouteGuardService],
     component: ReservationComponent,
   },
   {
@@ -29,25 +34,15 @@ const routes: Routes = [
   },
   {
     path: 'car',
+    canActivateChild : [RouteGuardService],
     component: CarComponent,
   },
   {
-    path: 'pending',
-    component: PendingComponent,
-  },
-  {
     path: 'addcars',
+    canActivate : [RouteGuardService],
     component: AddcarsComponent,
   },
-  {
-    path: 'bike',
-    component: BikeComponent,
-  },
-  {
-    path: 'van',
-    component: VanComponent,
-  },
-  { path: '', redirectTo: 'homepage', pathMatch: 'full' },
+  { path: '', redirectTo: 'signin', pathMatch: 'full' },
 ];
 
 @NgModule({

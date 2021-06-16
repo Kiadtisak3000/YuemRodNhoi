@@ -12,15 +12,13 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { UsersComponent } from './components/users/users.component';
-import { BikeComponent } from './components/bike/bike.component';
 import { CarComponent } from './components/car/car.component';
-import { VanComponent } from './components/van/van.component';
 import { PendingComponent } from './components/pending/pending.component';
 import { ReservationComponent } from './components/reservation/reservation.component';
 import { AddcarsComponent } from './components/addcars/addcars.component';
 
 @NgModule({
-  declarations: [AppComponent, SigninComponent, HomepageComponent, SignupComponent, NavbarComponent, UsersComponent, BikeComponent, CarComponent, VanComponent, PendingComponent, ReservationComponent, AddcarsComponent],
+  declarations: [AppComponent, SigninComponent, HomepageComponent, SignupComponent, NavbarComponent, UsersComponent, CarComponent, PendingComponent, ReservationComponent, AddcarsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
