@@ -40,5 +40,6 @@ export class CarsService {
     console.log("read "+carID + " read 2 " +carBody)
     const http='http://localhost:3000/cars/updatecar/'+carID;
     this.http.put<any>(http, carBody,).subscribe(response => {});
+    window.location.reload();   
   }
 }

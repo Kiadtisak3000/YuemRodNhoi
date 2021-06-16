@@ -53,7 +53,7 @@ export class SigninComponent implements OnInit {
   authenticateUser(userName: any, password: any){
     console.log("See" + userName)
     if(userName == "admin"  ){
-      this.router.navigate(['/pending']);
+      this.router.navigate(['/homepage']);
       console.log("check 1" + this.user)
       this.RouteGuardService.getForm(this.user)
     } else { 
