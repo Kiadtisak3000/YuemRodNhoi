@@ -12,28 +12,61 @@
                   <label for="">Username</label>
                   <input type="text" class="form-control" aria-describedby="helpId" formControlName="username" />
                 </div><br>
+                <div *ngIf="(fromdata.username.dirty || fromdata.username.touched)" id="sign">
+                  <div *ngIf="fromdata.username.errors?.required" class="alert alert-danger">
+                    Username is required
+                  </div>
+                </div>
                 <div class="form-group">
                   <label for="">Password</label>
                   <input type="password" class="form-control" aria-describedby="helpId" formControlName="password" />
                 </div><br>
+                <div *ngIf="(fromdata.password.dirty || fromdata.password.touched)" id="sign">
+                  <div *ngIf="fromdata.password.errors?.required" class="alert alert-danger">
+                    Password is required
+                  </div>
+                </div>
                 <div class="form-group">
                   <label for="">Firstname</label>
                   <input type="text" class="form-control" aria-describedby="helpId" formControlName="firstname" />
                 </div><br>
+                <div *ngIf="(fromdata.firstname.dirty || fromdata.firstname.touched)" id="sign">
+                  <div *ngIf="fromdata.firstname.errors?.required" class="alert alert-danger">
+                    Firstname is required
+                  </div>
+                </div>
                 <div class="form-group">
                   <label for="">Lastname</label>
                   <input type="text" class="form-control" aria-describedby="helpId" formControlName="lastname" />
                 </div><br>
+                <div *ngIf="(fromdata.lastname.dirty || fromdata.lastname.touched)" id="sign">
+                  <div *ngIf="fromdata.lastname.errors?.required" class="alert alert-danger">
+                    Lastname is required
+                  </div>
+                </div>
                 <div class="form-group">
                   <label for="">Email</label>
                   <input type="email" class="form-control" aria-describedby="helpId" formControlName="email" />
                 </div><br>
+                <div *ngIf="(fromdata.email.dirty || fromdata.email.touched)" id="sign">
+                  <div *ngIf="fromdata.email.errors?.required" class="alert alert-danger">
+                    Email is required
+                  </div>
+                  <div *ngIf="fromdata.email.errors?.email" class="alert alert-danger">
+                    Email is incorrect
+                  </div>
+                </div>
 
                 <div class="form-group">
                   <label for="">Date Of Birth</label>
                   <input type="date" class="form-control" aria-describedby="helpId" formControlName="dateofbirth" />
                 </div>
               </div><br>
+              <div *ngIf="(fromdata.dateofbirth.dirty || fromdata.dateofbirth.touched)" id="sign">
+                <div *ngIf="fromdata.dateofbirth.errors?.required" class="alert alert-danger">
+                  Date of birth is required
+                </div>
+              </div>
             </div><br>
             <div class="row">
               <div class="col-md-12">
