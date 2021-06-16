@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { NavbarComponent } from '../navbar/navbar.component';
@@ -12,8 +12,8 @@ import { RouteGuardService } from 'src/app/services/route-guard.service';
 export class SigninComponent implements OnInit {
 
   authForm = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl(''),
+    username: new FormControl('',[Validators.required]),
+    password: new FormControl('',[Validators.required]),
   });
 
   user : any;
@@ -65,5 +65,10 @@ export class SigninComponent implements OnInit {
 
   signup() {
     this.router.navigate(['/signup']);
+  }
+
+  get fromdata(){
+    console.log(this.authForm.controls);
+    return this.authForm.controls
   }
 }
