@@ -1,7 +1,180 @@
-<div>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbUDe7-e2mMyeiqZpIHGFFnhWzAQQz8VPZfg&usqp=CAU"
-        alt="" max-width="100%" height="auto">
-    <div style="background-image: url('img_girl.jpg');"></div>
+<!DOCTYPE html>
+<html>
+    <body style="background-color:rgb(236, 209, 100);">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+        
+            .flip-card {
+                background-color: transparent;
+                width: 440px;
+                height: 340px;
+                perspective: 1000px;
+            }
+        
+            .flip-card-inner {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                transition: transform 0.6s;
+                transform-style: preserve-3d;
+                box-shadow: 0 4px 8px 0 rgba(15, 82, 236, 0.2);
+            }
+        
+            .flip-card:hover .flip-card-inner {
+                transform: rotateY(180deg);
+            }
+        
+            .flip-card-front,
+            .flip-card-back {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+            }
+        
+            .flip-card-front {
+                background-color: rgb(150, 150, 104);
+                color: rgb(234, 235, 241);
+            }
+        
+            .flip-card-back {
+                background-color: #000000;
+                color: rgb(236, 209, 100);
+                transform: rotateY(180deg);
+                text-align: left;
+        
+        
+        
+            }
+            ul {
+                    width: 200px;
+                    position: absolute;
+                    left: 63%;
+                    margin-top: 25px;
+                    margin-left: -150px;
+                }
+            
+                li {
+                    position: relative;
+                    display: block;
+                    border: 1px solid rgb(186, 60, 202);
+                    margin-bottom: 5px;
+                    padding: 10px;
+                    text-align: center;
+                    text-transform: uppercase;
+                    animation: fadeIn 0.5s linear;
+                    animation-fill-mode: both;
+                }
+        </style>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<body>
 
+<!-- Side Navigation -->
+<nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="mySidebar">
+  <h1 class="w3-xxxlarge w3-text-theme">Side Navigation</h1>
+  <button class="w3-bar-item w3-button" onclick="w3_close()">Close <i class="fa fa-remove"></i></button>
+  <a href="#" class="w3-bar-item w3-button">Link 1</a>
+  <a href="#" class="w3-bar-item w3-button">Link 2</a>
+  <a href="#" class="w3-bar-item w3-button">Link 3</a>
+  <a href="#" class="w3-bar-item w3-button">Link 4</a>
+</nav>
 
+<!-- Header -->
+<header class="w3-container w3-theme w3-padding" id="myHeader">
+  
+  <div class="w3-center">
+  <h4>ยินดีต้อนรับเข้าสู่ระบบการยืมรถ</h4>
+  <h1 class="w3-xxxlarge w3-animate-bottom">Suranaree University of Technology</h1>
+    <div class="w3-padding-32">
+      <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey" onclick="document.getElementById('id01').style.display='block'" style="font-weight:900;">วิธีการยืมรถ</button>
+    </div>
+  </div>
+</header>
+
+<!-- Modal -->
+<div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-top">
+      <header class="w3-container w3-theme-l1"> 
+        <span onclick="document.getElementById('id01').style.display='none'"
+        class="w3-button w3-display-topright">×</span>
+        <h4>ขั้นตอนการยืมรถต่างๆ</h4>
+        <h5>SUT CAR <i class="fa fa-smile-o"></i></h5>
+      </header>
+      <div class="w3-padding">
+        <i class="fa fa-car w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
+  <p>1.เข้าสู่ระบบ</p>
+  <p>2.ไปที่หน้า "ยืมยานพาหนะ"</p>
+  <p>3.กรอกข้อมูลให้ครบ</p>
+  <p>กดที่ปุ่มข้างล่างเพื่อไปหน้ายืมยานพาหนะ</p>
+    
+        <p>กดปุ่มนี้เพื่อไปหน้า => <a class="btn btn-dark" href="http://localhost:4200/reservation">ยืมยานพาหนะ</a> </p>
+      </div>
+      <footer class="w3-container w3-theme-l1">
+        <p>Modal footer</p>
+      </footer>
+    </div>
+</div>
+
+<div class="w3-row-padding w3-center w3-margin-top">
+<div class="w3-third">
+  <div class="w3-card w3-container" style="min-height:460px">
+  <h3>ข้อมูลผู้ที่ล็อกอิน</h3><br>
+  <i class="fa fa-group w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
+  <div class="w3-container">
+    <p><i class="fa fa-spinner w3-spin" style="font-size:64px"></i></p>
+  </div>
+  </div>
+</div>
+
+<div class="w3-third">
+  <div  class="w3-card w3-container" style="min-height:460px">
+  <h3>ตัวอย่างรถ</h3><br>
+  <div  class="card" style="max-width: 100%; height: 100%;">
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img class="card-img-top: 100% "
+                    src="https://www.bloggang.com/data/y/yinglove/picture/1424491262.jpg" alt="Card image"
+                    style="width: 300px;">
+                <p class="card-text">
+                    เอาเม้าชี้ที่รูปเพื่อดูรายละเอียด
+
+                </p>
+            </div>
+            <div class="flip-card-back">
+
+                
+                <ul>
+                    <li> ยี่ห้อ : Honda </li>
+                    <li> รุ่น : CBR 1000RR</li>
+                    <li> เลขทะเบียน : กข 888</li>
+                    <li> ประเภทเกียร์ : ครัช</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div> &nbsp;
+  </div>
+</div>
+
+<div class="w3-third">
+  <div class="w3-card w3-container" style="min-height:460px">
+  <h3>ติดต่อฝ่ายบริการ</h3><br>
+  <i class="fa fa-twitch   w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
+  <p>Email : Yuemrodnoi@hotmail.com</p>
+  <p>Tel : 09561616</p>
+  <p>Address : Korat</p>
+  <p><i class="fa fa-smile-o"></i></p>
+  </div>
+</div>
 </div>
