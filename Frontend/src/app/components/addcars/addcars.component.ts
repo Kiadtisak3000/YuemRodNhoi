@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CarsService } from 'src/app/services/cars.service'; 
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-addcars',
@@ -23,7 +24,7 @@ export class AddcarsComponent implements OnInit {
 
   previewLoaded: boolean = false;
 
-  constructor(private cs: CarsService) { 
+  constructor(private cs: CarsService ,private auth: AuthService) { 
   }
 
   ngOnInit(): void {
@@ -64,6 +65,11 @@ export class AddcarsComponent implements OnInit {
   resetForm() {
     this.carForm.reset();
     this.previewLoaded = false;
+  }
+
+  get fromdata(){
+    console.log(this.carForm.controls);
+    return this.carForm.controls
   }
 
 }
