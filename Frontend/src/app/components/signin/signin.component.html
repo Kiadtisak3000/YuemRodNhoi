@@ -13,11 +13,21 @@
                   <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder=""
                     formControlName="username" />
                 </div>
+                <div *ngIf="(fromdata.username.dirty || fromdata.username.touched)" id="sign">
+                  <div *ngIf="fromdata.username.errors?.required" class="alert alert-danger">
+                    Username is required
+                  </div>
+                </div>
                 <div class="form-group">
                   <label for="">Password</label>
                   <input type="password" class="form-control" name="" id="" aria-describedby="helpId" placeholder=""
                     formControlName="password" />
                 </div><br>
+                <div *ngIf="(fromdata.password.dirty || fromdata.password.touched)" id="sign">
+                  <div *ngIf="fromdata.password.errors?.required" class="alert alert-danger">
+                    Password is required
+                  </div>
+                </div>
               </div>
             </div>
             <div class="row">
