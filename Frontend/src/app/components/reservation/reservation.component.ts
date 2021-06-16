@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CarsService } from 'src/app/services/cars.service';
 import { ReservationService } from 'src/app/services/reservation.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-reservation',
@@ -22,7 +23,7 @@ export class ReservationComponent implements OnInit {
     other: new FormControl('', [Validators.required]),
   });
 
-  constructor(private cars: CarsService, private reservations: ReservationService) {
+  constructor(private cars: CarsService, private reservations: ReservationService, private auth: AuthService) {
     this.onLoading();
   }
 
@@ -57,6 +58,11 @@ export class ReservationComponent implements OnInit {
 
   resetForm() {
     this.reservationForm.reset();
+  }
+
+  get fromdata(){
+    console.log(this.reservationForm.controls);
+    return this.reservationForm.controls
   }
 
 }
