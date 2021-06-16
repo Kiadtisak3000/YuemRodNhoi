@@ -15,9 +15,7 @@ var Schema = require("mongoose").Schema;
 const carsSchema = Schema({
   type: String,
   name: String,
-  licensePlate: String,
   detail: String,
-  quantity: Number,
   file: String,
   img: String
 }, {

@@ -72,7 +72,6 @@
                     <thead class="thead-inverse">
                         <tr>
                             <th>ยี่ห้อ</th>
-                            <th>ป้ายทะเบียน</th>
                             <th>รายละเอียด</th>
                             <th>รูป</th>
                             <th>เปลี่ยนรูปยานพาหนะ</th>
@@ -84,7 +83,6 @@
                             <td scope="row">
                                 {{item.name}}
                             </td>
-                            <td>{{item.licensePlate}}</td>
                             <td>{{item.detail}}</td>
                             <td><img [src]="item.img" style="height:150px;"></td>
                             <td><button (click)="edit(item._id,item.value)">

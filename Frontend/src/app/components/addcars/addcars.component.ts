@@ -15,9 +15,7 @@ export class AddcarsComponent implements OnInit {
   carForm = new FormGroup({
     type: new FormControl('', [Validators.required]),
     name: new FormControl('', [Validators.required]),
-    licensePlate: new FormControl('', [Validators.required]),
     detail: new FormControl('', [Validators.required]),
-    quantity: new FormControl('', [Validators.required]),
     file: new FormControl('', [Validators.required]),
     img: new FormControl('', [Validators.required]),
   });

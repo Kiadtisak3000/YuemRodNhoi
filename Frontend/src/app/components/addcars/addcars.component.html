@@ -29,7 +29,7 @@
                                 <div *ngIf="fromdata.type.errors?.required" class="alert alert-danger">
                                     Type is required
                                 </div>
-                              </div>
+                            </div>
 
                             <div class="row">
                                 <div class="col-md-3">
@@ -43,26 +43,10 @@
                             </div> <br>
                             <div *ngIf="(fromdata.name.dirty || fromdata.name.touched)" id="name">
                                 <div *ngIf="fromdata.name.errors?.required" class="alert alert-danger">
-                                    Brand  is required
+                                    Brand is required
                                 </div>
-                              </div>
-
-                            <div class="row">
-                                <div class="col-md-3">
-                                    ป้ายทะเบียน:
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" formControlName='licensePlate'>
-                                    </div>
-                                </div>
-                            </div> <br>
-                            <div *ngIf="(fromdata.licensePlate.dirty || fromdata.licensePlate.touched)" id="licensePlate">
-                                <div *ngIf="fromdata.licensePlate.errors?.required" class="alert alert-danger">
-                                    LicensePlate is required
-                                </div>
-                              </div>
-
+                            </div>
+        
                             <div class="row">
                                 <div class="col-md-3">
                                     รายละเอียด:
@@ -77,23 +61,7 @@
                                 <div *ngIf="fromdata.detail.errors?.required" class="alert alert-danger">
                                     Detail is required
                                 </div>
-                              </div>
-
-                            <div class="row">
-                                <div class="col-md-3">
-                                    จำนวน:
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="form-group">
-                                        <input type="number" class="form-control" formControlName='quantity'>
-                                    </div>
-                                </div>
-                            </div> <br>
-                            <div *ngIf="(fromdata.quantity.dirty || fromdata.quantity.touched)" id="quantity">
-                                <div *ngIf="fromdata.quantity.errors?.required" class="alert alert-danger">
-                                    Quantity is required
-                                </div>
-                              </div>
+                            </div>
 
                             <div class="row">
                                 <div class="col-md-3">
@@ -110,7 +78,7 @@
                                 <div *ngIf="fromdata.file.errors?.required" class="alert alert-danger">
                                     File is required
                                 </div>
-                              </div>
+                            </div>
 
                             <div class="row">
                                 <div class="col-md-3">
