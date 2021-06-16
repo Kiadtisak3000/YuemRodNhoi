@@ -25,6 +25,11 @@
                                 </div>
                             </div>
                         </div><br>
+                        <div *ngIf="(fromdata.car.dirty || fromdata.car.touched)" id="car">
+                            <div *ngIf="fromdata.car.errors?.required" class="alert alert-danger">
+                                Car is required
+                            </div>
+                          </div>
 
                         <div class="row">
                             <div class="col-md-3">
@@ -36,6 +41,12 @@
                                 </div>
                             </div>
                         </div><br>
+                        <div *ngIf="(fromdata.detail.dirty || fromdata.detail.touched)" id="detail">
+                            <div *ngIf="fromdata.detail.errors?.required" class="alert alert-danger">
+                                Detail is required
+                            </div>
+                          </div>
+
                         <div class="row">
                             <div class="col-md-3">
                                 ชื่อผู้ยืม:
@@ -46,6 +57,12 @@
                                 </div>
                             </div>
                         </div><br>
+                        <div *ngIf="(fromdata.name.dirty || fromdata.name.touched)" id="name">
+                            <div *ngIf="fromdata.name.errors?.required" class="alert alert-danger">
+                                Name is required
+                            </div>
+                          </div>
+
                         <div class="row">
                             <div class="col-md-3">
                                 เบอร์โทร:
@@ -56,6 +73,12 @@
                                 </div>
                             </div>
                         </div><br>
+                        <div *ngIf="(fromdata.tel.dirty || fromdata.tel.touched)" id="tel">
+                            <div *ngIf="fromdata.tel.errors?.required" class="alert alert-danger">
+                                Telephone number is required
+                            </div>
+                          </div>
+
                         <div class="row">
                             <div class="col-md-3">
                                 เริ่มยืม:
@@ -66,6 +89,12 @@
                                 </div>
                             </div>
                         </div><br>
+                        <div *ngIf="(fromdata.start.dirty || fromdata.start.touched)" id="start">
+                            <div *ngIf="fromdata.start.errors?.required" class="alert alert-danger">
+                                Date start is required
+                            </div>
+                          </div>
+
                         <div class="row">
                             <div class="col-md-3">
                                 สิ้นสุด:
@@ -76,6 +105,12 @@
                                 </div>
                             </div>
                         </div><br>
+                        <div *ngIf="(fromdata.end.dirty || fromdata.end.touched)" id="end">
+                            <div *ngIf="fromdata.end.errors?.required" class="alert alert-danger">
+                                Date end is required
+                            </div>
+                          </div>
+
                         <div class="row">
                             <div class="col-md-3">
                                 ส่วนเสริม:
@@ -86,6 +121,12 @@
                                 </div>
                             </div>
                         </div><br>
+                        <div *ngIf="(fromdata.option.dirty || fromdata.option.touched)" id="option">
+                            <div *ngIf="fromdata.option.errors?.required" class="alert alert-danger">
+                                Option is required
+                            </div>
+                          </div>
+
                         <div class="row">
                             <div class="col-md-3">
                                 อื่นๆ:
@@ -96,6 +137,11 @@
                                 </div>
                             </div>
                         </div><br>
+                        <div *ngIf="(fromdata.other.dirty || fromdata.other.touched)" id="other">
+                            <div *ngIf="fromdata.other.errors?.required" class="alert alert-danger">
+                                Other is required
+                            </div>
+                          </div>
 
                         <div class="row">
                             <div class="col-md-12">
