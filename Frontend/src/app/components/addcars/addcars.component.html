@@ -25,6 +25,11 @@
                                     </div>
                                 </div>
                             </div> <br>
+                            <div *ngIf="(fromdata.type.dirty || fromdata.type.touched)" id="type">
+                                <div *ngIf="fromdata.type.errors?.required" class="alert alert-danger">
+                                    Type is required
+                                </div>
+                              </div>
 
                             <div class="row">
                                 <div class="col-md-3">
@@ -36,6 +41,11 @@
                                     </div>
                                 </div>
                             </div> <br>
+                            <div *ngIf="(fromdata.name.dirty || fromdata.name.touched)" id="name">
+                                <div *ngIf="fromdata.name.errors?.required" class="alert alert-danger">
+                                    Brand  is required
+                                </div>
+                              </div>
 
                             <div class="row">
                                 <div class="col-md-3">
@@ -47,6 +57,11 @@
                                     </div>
                                 </div>
                             </div> <br>
+                            <div *ngIf="(fromdata.licensePlate.dirty || fromdata.licensePlate.touched)" id="licensePlate">
+                                <div *ngIf="fromdata.licensePlate.errors?.required" class="alert alert-danger">
+                                    LicensePlate is required
+                                </div>
+                              </div>
 
                             <div class="row">
                                 <div class="col-md-3">
@@ -58,6 +73,12 @@
                                     </div>
                                 </div>
                             </div> <br>
+                            <div *ngIf="(fromdata.detail.dirty || fromdata.detail.touched)" id="detail">
+                                <div *ngIf="fromdata.detail.errors?.required" class="alert alert-danger">
+                                    Detail is required
+                                </div>
+                              </div>
+
                             <div class="row">
                                 <div class="col-md-3">
                                     จำนวน:
@@ -68,6 +89,11 @@
                                     </div>
                                 </div>
                             </div> <br>
+                            <div *ngIf="(fromdata.quantity.dirty || fromdata.quantity.touched)" id="quantity">
+                                <div *ngIf="fromdata.quantity.errors?.required" class="alert alert-danger">
+                                    Quantity is required
+                                </div>
+                              </div>
 
                             <div class="row">
                                 <div class="col-md-3">
@@ -80,6 +106,11 @@
                                     </div>
                                 </div>
                             </div> <br>
+                            <div *ngIf="(fromdata.file.dirty || fromdata.file.touched)" id="sign">
+                                <div *ngIf="fromdata.file.errors?.required" class="alert alert-danger">
+                                    File is required
+                                </div>
+                              </div>
 
                             <div class="row">
                                 <div class="col-md-3">
