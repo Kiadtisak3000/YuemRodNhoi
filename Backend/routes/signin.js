@@ -3,10 +3,11 @@ const router = expressFunction.Router();
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+require("dotenv").config()
 
 var Schema = require("mongoose").Schema;
 
-const key = "thisismyKEY";
+const key = process.env.secret_key;
 
 const userSchema = Schema(
   {

@@ -1,8 +1,9 @@
 const expressFunction = require("express");
 const mongoose = require("mongoose");
+require("dotenv").config()
 var expressApp = expressFunction();
 
-const url = "mongodb://localhost:27017/rentalcars";
+const url = process.env.db+"/rentalcars";
 const config = {
   autoIndex: true,
   useNewUrlParser: true,
@@ -261,7 +262,7 @@ expressApp.get('/reservations/get', (req, res) => {
 
 expressApp.use("/user", require("./routes/user"));
 expressApp.use("/login", require("./routes/signin"));
-
-expressApp.listen(3000, function () {
-  console.log("Listening on port 3000");
+const port = process.env.port
+expressApp.listen(port , function () {
+  console.log("Listening on port",port);
 });
