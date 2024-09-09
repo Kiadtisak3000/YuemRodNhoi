@@ -3,22 +3,7 @@ const router = expressFunction.Router();
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 
-var Schema = require("mongoose").Schema;
-
-const userSchema = Schema(
-  {
-    username: String,
-    password: String,
-    email: String,
-    firstname: String,
-    lastname: String,
-    dateofbirth: String,
-  },
-  {
-    collection: "users",
-  }
-);
-
+const {userSchema} = require("../Schema/user.js")
 let User;
 try {
   User = mongoose.model("users");

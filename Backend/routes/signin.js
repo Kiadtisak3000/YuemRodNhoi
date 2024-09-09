@@ -4,20 +4,8 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 require("dotenv").config()
-
-var Schema = require("mongoose").Schema;
-
+const {userSchema} = require("../Schema/user.js")
 const key = process.env.secret_key;
-
-const userSchema = Schema(
-  {
-    username: String,
-    password: String,
-  },
-  {
-    collection: "users",
-  }
-);
 
 let User;
 try {

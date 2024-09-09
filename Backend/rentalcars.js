@@ -9,41 +9,14 @@ const config = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 };
-
-var Schema = require("mongoose").Schema;
-
-//Cars Schema
-const carsSchema = Schema({
-  type: String,
-  name: String,
-  detail: String,
-  file: String,
-  img: String
-}, {
-  collection: 'cars'
-});
-
+const {carsSchema} = require("./Schema/car.js")
 let Car
 try {
   Car = mongoose.model('cars')
 } catch (error) {
   Car = mongoose.model('cars', carsSchema);
 }
-
-//Reservations Schema
-const reservationsSchema = Schema({
-  car: String,
-  detail: String,
-  name: String,
-  tel: String,
-  start: String,
-  end: String,
-  option: String,
-  other: String,
-}, {
-  collection: 'reservations'
-});
-
+ const {reservationsSchema} = require("./Schema/reservation.js")
 let Reservation
 try {
   Reservation = mongoose.model('reservations')
