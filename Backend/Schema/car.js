@@ -1,5 +1,6 @@
 var Schema = require("mongoose").Schema;
-module.exports.carsSchema = Schema({
+const mongoose = require("mongoose");
+exports.carsSchema = Schema({
     type: String,
     name: String,
     detail: String,
