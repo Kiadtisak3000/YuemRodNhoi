@@ -15,7 +15,6 @@ const makeHash = async (plainText) => {
   const result = await bcrypt.hash(plainText, 10);
   return result;
 };
-
 const insertUser = (dataUser) => {
   return new Promise((resolve, rejects) => {
     var new_user = new User({
@@ -63,3 +62,4 @@ router.route("/signup").post((req, res) => {
 });
 
 module.exports = router;
+module.exports = {insertUser};
