@@ -52,8 +52,6 @@ router.route("/signin").post(async (req, res) => {
     password: req.body.password,
   };
 
-  console.log(playload);
-
   try {
     const result = await findUser(playload.username);
     const loginStatus = await compareHash(playload.password, result.password);
