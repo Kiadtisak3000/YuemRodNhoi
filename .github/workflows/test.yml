@@ -16,6 +16,4 @@ jobs:
         with:
           node-version: 20
       - run: git checkout test/backend
-      - run: cd Backend
-      - run: npm i
-      - run: npm run test
+      - run: bash ./Scripts/test_backend.sh
