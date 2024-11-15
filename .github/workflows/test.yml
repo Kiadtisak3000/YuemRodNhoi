@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -15,6 +16,6 @@ jobs:
         with:
           node-version: 20
       - run: git checkout test/backend
-      - run: cd ./Backend/
+      - run: cd Backend
       - run: npm i
       - run: npm run test
