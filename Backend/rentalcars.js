@@ -1,8 +1,8 @@
 const expressFunction = require("express");
 const { cors } = require("./middleware/frontendcors.middle.js");
-const { Database_Connect } = require("./middleware/database.middle.js");
+const { Database_Connect} = require("./Database_Connection.js");
 var expressApp = expressFunction();
-
+Database_Connect()
 const {
   car_get,
   car_del,
@@ -11,7 +11,6 @@ const {
 } = require("./routes/cars.router.js");
 expressApp.use(cors);
 expressApp.use(expressFunction.json());
-expressApp.use(Database_Connect);
 
 expressApp.route("/cars/deletecars/:id").delete(car_del);
 expressApp.post("/cars/addcars", car_add);
