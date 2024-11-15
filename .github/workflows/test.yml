@@ -8,6 +8,9 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      dbpath: ${{secrets.dburl}}
+      privatekey: ${{secrets.key}}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -16,4 +19,6 @@ jobs:
         with:
           node-version: 20
       - run: git checkout test/backend
+      - run: echo 'db="$dbpath"' >> ./Backend/.env
+      - run: echo 'secret_key="$privatekey"' >> ./Backend/.env
       - run: bash ./Scripts/test_backend.sh
