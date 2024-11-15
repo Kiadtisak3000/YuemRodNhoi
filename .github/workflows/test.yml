@@ -9,8 +9,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     env:
-      dbpath: ${{secrets.dburl}}
-      privatekey: ${{secrets.key}}
+      dbpath: ${{secrets.DBURL}}
+      privatekey: ${{secrets.KEY}}
     steps:
       - uses: actions/checkout@v4
         with:
